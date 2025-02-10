@@ -3,6 +3,7 @@ variables:
     {chestLocations::%player%} = none
     {expPoints::%player%} = 0
 
+#운영자 전용 아이템 인벤토리(명령어로 등록한 아이템들이 저장됨)
 command /아이템추가:
     trigger:
         if player's tool is set:
@@ -22,7 +23,7 @@ command /아이템지급:
         add book named "&d&l[&fTitle&d&l]&f" with lore "&fRight-click to obtain this title." to {_inventory}
         add book named "&d&l[&fTitle&d&l]&f &d&l[운영자]" with lore "&fRight-click to obtain this title." to {_inventory}
 
-        add stick named "&d&l[운영자의 죽음의 빠따]&r" with lore "운영자 전용 죽음의 빠따" to {_inventory}
+        add stick named "&d&l[운영자의 죽음의 빠따]&r" with lore "운영자 전용 빠따" to {_inventory}
         loop all items in {_inventory}:
             if name of loop-item contains "§" and "운영자의":
                 enchant loop-item with unbreaking 10
@@ -30,7 +31,7 @@ command /아이템지급:
                 enchant loop-item with sharpness 100
                 enchant loop-item with protection 100
                 enchant loop-item with breach 4
-        add stick named "&d&l[운영자의 아프지만 증거는 안남는 빠따]&r" with lore "운영자 전용 죽음의 빠따" to {_inventory}
+        add stick named "&d&l[운영자의 죽음의 밀치기 빠따]&r" with lore "운영자 전용 빠따" to {_inventory}
         loop all items in {_inventory}:
             if name of loop-item contains "§" and "운영자의 아프":
                 enchant loop-item with unbreaking 10

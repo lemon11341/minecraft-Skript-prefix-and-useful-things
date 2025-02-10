@@ -19,7 +19,7 @@ on join:
     send title "&a%{korName::%player%}% 님 환영합니다!" with subtitle "" to player for 3 second
 
 on chat:
-    set message format to "%{playerTitle::%player%}%&r <%{korName::%player%}%&r> %message%"
+    set message format to "%{playerTitle::%player%}%&r <%player%&r %{korName::%player%}%&r> %message%"
 
 command /변장 <text>:
     permission: op
