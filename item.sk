@@ -3,7 +3,7 @@ variables:
     {chestLocations::%player%} = none
     {expPoints::%player%} = 0
 
-#운영자 전용 아이템 인벤토리(명령어로 등록한 아이템들이 저장됨)
+#운영자 전용 아이템 인벤토리(명령어로 등록한 아이템들이 저장됨) 아이템 들고 명령어 입력
 command /아이템추가:
     trigger:
         if player's tool is set:
@@ -33,11 +33,12 @@ command /아이템지급:
                 enchant loop-item with breach 4
         add stick named "&d&l[운영자의 죽음의 밀치기 빠따]&r" with lore "운영자 전용 빠따" to {_inventory}
         loop all items in {_inventory}:
-            if name of loop-item contains "§" and "운영자의 아프":
+            if name of loop-item contains "§" and "운영자의 죽음의 밀치기":
                 enchant loop-item with unbreaking 10
                 enchant loop-item with mending
                 enchant loop-item with knockback 10
                 enchant loop-item with protection 100
+	add flower banner pattern named "&e시작의 압긍마을 귀환서&r" with lore "시작의 압긍마을로 귀환시켜주는 스크롤" to {_inventory}
 
         loop {itemList::*}:
             add loop-value to {_inventory}

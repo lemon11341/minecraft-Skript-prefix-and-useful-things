@@ -19,8 +19,9 @@ on join:
     send title "&a%{korName::%player%}% 님 환영합니다!" with subtitle "" to player for 3 second
 
 on chat:
-    set message format to "%{playerTitle::%player%}%&r <%player%&r %{korName::%player%}%&r> %message%"
+    set message format to "%{playerTitle::%player%}%&r <%player%&r - %{korName::%player%}%&r> %message%"
 
+# 다른 이름으로 바꾸기
 command /변장 <text>:
     permission: op
     trigger:
@@ -30,7 +31,7 @@ command /변장 <text>:
         set tablist name of player to coloured {_korNameE}
         set {playerTitle::%player%} to ""
 
-#톡 대상닉네임 메시지
+# /톡 대상닉네임 메시지
 command /톡 <text> <text>:
     trigger:
         set {_korName} to arg-1
@@ -47,7 +48,7 @@ command /톡 <text> <text>:
         if {_found} is false:
             send "플레이어 %{_korName}% 를 찾을 수 없습니다." to player
 
-#giveitem 아이템 이름 아이템설명
+# /giveitem 아이템 이름 아이템설명
 command /giveitem <item> <text> <text>:
     permission: op
     trigger:
@@ -58,13 +59,14 @@ command /giveitem <item> <text> <text>:
         give player {_item} named "%{_name}%" with lore "%{_lore}%."
         send "&a%{_item}%이(가) 이름이 %{_name}%로, 설명이 %{_lore}%로 설정되어 지급되었습니다." to player
 
+# /공지 공지사항
 command /공지 [<text>]:
     permission: op
     trigger:
         set {_txt} to coloured arg 1
         broadcastMessage({_txt})
 
-#닉네임 플레이어아이디 원하는닉네임
+# /닉네임 플레이어아이디 원하는닉네임
 command /닉네임 <player> <text>:
     permission: op
     trigger:
@@ -89,7 +91,7 @@ command /닉네임 <player> <text>:
 
 
 
-#칭호 책 생성
+#칭호 책 생성 /titlebook 칭호 (색코드 사용가능)
 command /titlebook [<text>]:
     permission: op
     trigger:

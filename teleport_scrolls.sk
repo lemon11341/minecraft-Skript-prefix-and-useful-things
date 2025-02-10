@@ -1,11 +1,13 @@
+#텔포 스크롤 (아이템, 좌표 수정 가능) 운영자 창고에서 꺼내기 가능
 on right click with a flower banner pattern:
     if name of player's tool contains "§" and "귀환서":
         remove 1 of player's tool from player's inventory
-        send title "" with subtitle "&6귀환합니다..." to player for 4 second
-        wait 4 seconds
+        send title "" with subtitle "&6귀환합니다..." to player for 3 second
+        wait 3 seconds
         teleport player to location(-253, 65, 505, world "world")
         send title "" with subtitle "&a시작의 압긍마을에 도착했습니다!" to player for 1 second
 
+#아래는 이코노미 명령어 관련 플러그인 없으면 삭제하세요
 command /수표 <number>:
     trigger:
         if arg-1 is a number:
