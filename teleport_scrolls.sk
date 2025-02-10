@@ -1,6 +1,6 @@
 #텔포 스크롤 (아이템, 좌표 수정 가능) 운영자 창고에서 꺼내기 가능
 on right click with a flower banner pattern:
-    if name of player's tool contains "§" and "귀환서":
+    if name of player's tool contains "§" and "시작의 압긍마을 귀환서":
         remove 1 of player's tool from player's inventory
         send title "" with subtitle "&6귀환합니다..." to player for 3 second
         wait 3 seconds
