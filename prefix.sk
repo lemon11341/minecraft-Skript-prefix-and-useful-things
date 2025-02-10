@@ -30,7 +30,7 @@ command /변장 <text>:
         set tablist name of player to coloured {_korNameE}
         set {playerTitle::%player%} to ""
 
-
+#톡 대상닉네임 메시지
 command /톡 <text> <text>:
     trigger:
         set {_korName} to arg-1
@@ -47,7 +47,7 @@ command /톡 <text> <text>:
         if {_found} is false:
             send "플레이어 %{_korName}% 를 찾을 수 없습니다." to player
 
-
+#giveitem 아이템 이름 아이템설명
 command /giveitem <item> <text> <text>:
     permission: op
     trigger:
@@ -64,6 +64,7 @@ command /공지 [<text>]:
         set {_txt} to coloured arg 1
         broadcastMessage({_txt})
 
+#닉네임 플레이어아이디 원하는닉네임
 command /닉네임 <player> <text>:
     permission: op
     trigger:
