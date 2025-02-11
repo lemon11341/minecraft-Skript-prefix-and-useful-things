@@ -40,8 +40,8 @@ command /톡 <text> <text>:
         
         loop all players:
             if {korName::%loop-player%} contains {_korName}:
-                send "&a[귓속말] &f%{korName::%player%}%&r: %{_message}%" to loop-player
-                send "&a[귓속말] &f나: %{_message}%" to player
+                send "&a[귓속말] &f%{korName::%player%}% -> 나&r : %{_message}%" to loop-player
+                send "&a[귓속말] &f나 -> %{korName::%player%}%&r : %{_message}%" to player
                 set {_found} to true
                 stop loop
 
