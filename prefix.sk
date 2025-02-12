@@ -67,27 +67,20 @@ command /공지 [<text>]:
         broadcastMessage({_txt})
 
 # /닉네임 플레이어아이디 원하는닉네임
-command /닉네임 <player> <text>:
-    permission: op
+command /닉네임 <text>:
     trigger:
-        set {_target} to arg-1
-        set {_newNick} to arg-2
+        set {_newNick} to arg-1
+        set {korName::%player%} to coloured {_newNick}
+        wait 1 tick  # 플레이어의 데이터가 로드될 때까지
 
-        if {_target} is not online:
-            send "플레이어 %arg-1% 가 온라인이 아닙니다." to player
-            stop
-
-        set {korName::%{_target}%} to coloured {_newNick}
-        wait 1 tick  # 플레이어의 데이터가 로드될 때까지 기다립니다.
-        set {_title} to {playerTitle::%{_target}%}
-        set {_kor} to {korName::%{_target}%}
+        set {_title} to {playerTitle::%player%}
+        set {_kor} to {korName::%player%}
         set {_displayName} to "%{_title}%&r %{_kor}%&r"
-        set {_tabName} to "%{_title}%&r %{_kor}%&r %{_target}%"
+        set {_tabName} to "%{_title}%&r %{_kor}%&r %player%"
 
-        set display name of {_target} to coloured {_displayName}
-        set tablist name of {_target} to coloured {_tabName}
-        send "닉네임이 &c%{_kor}%&r 로 변경되었습니다!" to {_target}
-        send "플레이어 %arg-1% 의 닉네임이 &c%{_kor}%&r 로 변경되었습니다!" to player
+        set display name of player to coloured {_displayName}
+        set tablist name of player to coloured {_tabName}
+        send "플레이어 %player% 의 닉네임이 &d%{_kor}%&r 로 변경되었습니다!" to all players
 
 
 
